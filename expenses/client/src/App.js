@@ -1,7 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 
+
+
 function App() {
+   
   return (
     <div className="container">
        <div className="addExpense">
@@ -17,6 +20,13 @@ function App() {
 
         <button onclick="addExpense()">Add Expense</button>
        </div>
+       <section id="viewExpenses">
+            <h2>View Expenses</h2>
+            <ul id="expenseList"></ul>
+            <p>Total Expenses: $<span id="totalExpenses">0.00</span></p>
+            <h3>Amount Owed by Each Friend</h3>
+            <ul id="owedList"></ul>
+        </section>
     </div>
 
   );
