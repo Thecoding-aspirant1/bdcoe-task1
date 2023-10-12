@@ -3,22 +3,22 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+       <div className="addExpense">
+        <h2>Add Expenses</h2>
+        <label forhtml="description">Description:</label>
+        <input type="text" id="description" placeholder="Enter Description" required/>
+
+        <label forhtml="amount">Amount:</label>
+            <input type="number" id="amount" placeholder="Enter amount" required/>
+
+        <label forhtml="date">Date:</label>
+        <input type="date" id="date" required/>    
+
+        <button onclick="addExpense()">Add Expense</button>
+       </div>
     </div>
+
   );
 }
 
