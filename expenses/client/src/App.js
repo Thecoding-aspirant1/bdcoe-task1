@@ -43,7 +43,7 @@ const App = () => {
     <h1>ExpenseHUB</h1>
     <div id="elements">
     
-            <li><a href="#add">Add Expense</a></li>
+            <li><a href="#add" >Add Expense</a></li>
             <li><a href="#list">Expense List</a></li>
             <li><a href="#total">Total</a></li>
             <li><a href="#owed">Amount Owed</a></li>
