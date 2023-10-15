@@ -13,6 +13,8 @@
   }
 }
 
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -35,52 +37,95 @@
   to {
     transform: rotate(360deg);
   }
+} 
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS264h6JnYe0d4IAwP-77gN4pzxKvCy9sZxXg&usqp=CAU);
 }
 
-.container {
-  max-width: 800px;
+nav {
+  height: 80px;
+  background-color: #4cadaf;
+  padding:25px;
+  color: #f5f5f5;
+  display: flex;
+  justify-content: start;
+  font-family: 'Courgette', cursive;
+  font-family: 'Pacifico', cursive;
+  font-family: 'PT Serif', serif;
+
+}
+
+.logo {
+  font-size: 50px;
+  color: rgb(218, 157, 218);
+  margin-right: 10px;
+
+}
+
+h1 {
+  font-style: italic;
+  margin-left: 15px;
+}
+
+.app {
+  max-width: 600px;
   margin: 20px auto;
   background-color: #fff;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-
-section {
-  margin-bottom: 20px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
+form {
+  display: flex;
+  flex-direction: column;
 }
 
 input {
-  width: 100%;
-  padding: 8px;
+  width:100%;
+  padding:8px;
   margin-bottom: 10px;
-  box-sizing: border-box;
+  box-sizing:border-box;
+}
+
+label {
+  margin: 10px 0;
 }
 
 button {
-  background-color: #499cbc;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #4cadaf;
   color: #fff;
-  padding: 10px 15px;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
+  width:100px;
 }
 
 button:hover {
-  background-color: #117dab;
+  background-color: #2926cb;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+#total {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  text-align: center;
 }
 
-li {
-  margin-bottom: 5px;
+#total h2 {
+  margin-bottom: 10px;
 }
+
+p {
+  color: #2926cb;
+}
+
+
+
+

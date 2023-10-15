@@ -1,35 +1,59 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPiggyBank } from '@fortawesome/free-solid-svg-icons';
+import ExpenseForm from './expenseForm';
+import ExpenseList from './expenseList';
 
 
+const App = () => {
+  const [expenses, setExpenses] = useState([]);
 
-function App() {
-   
+  
+  useEffect(() => {
+    const storedExpenses = JSON.parse(localStorage.getItem('expenses')) || [];
+    setExpenses(storedExpenses);
+  }, []);
+
+  
+  useEffect(() => {
+    localStorage.setItem('expenses', JSON.stringify(expenses));
+  }, [expenses]);
+
+  
+  const addExpense = (newExpense) => {
+    setExpenses([...expenses, newExpense]);
+  };
+
+  const calculateTotal = () => {
+    return expenses.reduce((total, expense) => total + expense.amount, 0);
+  };
+
   return (
-    <div className="container">
-       <div className="addExpense">
-        <h2>Add Expenses</h2>
-        <label forhtml="description">Description:</label>
-        <input type="text" id="description" placeholder="Enter Description" required/>
-
-        <label forhtml="amount">Amount:</label>
-            <input type="number" id="amount" placeholder="Enter amount" required/>
-
-        <label forhtml="date">Date:</label>
-        <input type="date" id="date" required/>    
-
-        <button onclick="addExpense()">Add Expense</button>
-       </div>
-       <section id="viewExpenses">
-            <h2>View Expenses</h2>
-            <ul id="expenseList"></ul>
-            <p>Total Expenses: $<span id="totalExpenses">0.00</span></p>
-            <h3>Amount Owed by Each Friend</h3>
-            <ul id="owedList"></ul>
-        </section>
+    <>
+    <nav>
+      
+    <FontAwesomeIcon icon={faPiggyBank} className="logo" />
+    <h1>ExpenseHUB</h1>
+    
+    </nav>
+    <div className="app">
+      <h1>Expense Tracker</h1>
+      <ExpenseForm addExpense={addExpense} />
+      <ExpenseList expenses={expenses} />
+      <div id="total">
+          <h2>Total Expenses:</h2>
+          <p>Total Amount:</p>
+          <p>${calculateTotal()}</p>
+        </div>
     </div>
-
+    </>
   );
-}
+
+
+};
 
 export default App;
+
+
+
