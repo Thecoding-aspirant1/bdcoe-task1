@@ -12,7 +12,7 @@ const ExpenseForm = ({ addExpense }) => {
     
 
     if (!description || !amount || !date) {
-      alert('Please fill in all fields');
+      alert('Please fill all fields ($)');
       return;
     }
 
