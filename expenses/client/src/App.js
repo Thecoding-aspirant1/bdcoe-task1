@@ -8,7 +8,7 @@ import ExpenseList from './expenseList';
 
 const App = () => {
   const [expenses, setExpenses] = useState([]);
-  const [friendsCount] = useState(1);
+  const [friendsCount] = useState(2);
 
   
   useEffect(() => {
@@ -32,7 +32,7 @@ const App = () => {
 
   const amountOwedPerFriend = () => {
     const totalExpenses = calculateTotal();
-    return (totalExpenses / friendsCount)*0.05;
+    return (totalExpenses / friendsCount)*0.002;
   };
 
   return (
